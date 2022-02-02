@@ -1,0 +1,523 @@
+[
+    {
+        "nodeType": "Stmt_Namespace",
+        "attributes": {
+            "startLine": 3,
+            "endLine": 26,
+            "kind": 1
+        },
+        "name": {
+            "nodeType": "Name",
+            "attributes": {
+                "startLine": 3,
+                "endLine": 3
+            },
+            "parts": [
+                "App",
+                "Http",
+                "Resources"
+            ]
+        },
+        "stmts": [
+            {
+                "nodeType": "Stmt_Use",
+                "attributes": {
+                    "startLine": 5,
+                    "endLine": 5
+                },
+                "type": 1,
+                "uses": [
+                    {
+                        "nodeType": "Stmt_UseUse",
+                        "attributes": {
+                            "startLine": 5,
+                            "endLine": 5
+                        },
+                        "type": 0,
+                        "name": {
+                            "nodeType": "Name",
+                            "attributes": {
+                                "startLine": 5,
+                                "endLine": 5
+                            },
+                            "parts": [
+                                "Illuminate",
+                                "Http",
+                                "Resources",
+                                "Json",
+                                "JsonResource"
+                            ]
+                        },
+                        "alias": null
+                    }
+                ]
+            },
+            {
+                "nodeType": "Stmt_Class",
+                "attributes": {
+                    "startLine": 7,
+                    "endLine": 26
+                },
+                "name": {
+                    "nodeType": "Identifier",
+                    "attributes": {
+                        "startLine": 7,
+                        "endLine": 7
+                    },
+                    "name": "ObjectItemResource"
+                },
+                "stmts": [
+                    {
+                        "nodeType": "Stmt_ClassMethod",
+                        "attributes": {
+                            "startLine": 15,
+                            "comments": [
+                                {
+                                    "nodeType": "Comment_Doc",
+                                    "text": "\/**\n     * Transform the resource into an array.\n     *\n     * @param  \\Illuminate\\Http\\Request  $request\n     * @return array\n     *\/",
+                                    "line": 9,
+                                    "filePos": 140,
+                                    "tokenPos": 22,
+                                    "endLine": 14,
+                                    "endFilePos": 273,
+                                    "endTokenPos": 22
+                                }
+                            ],
+                            "endLine": 25
+                        },
+                        "flags": 1,
+                        "byRef": false,
+                        "name": {
+                            "nodeType": "Identifier",
+                            "attributes": {
+                                "startLine": 15,
+                                "endLine": 15
+                            },
+                            "name": "toArray"
+                        },
+                        "params": [
+                            {
+                                "nodeType": "Param",
+                                "attributes": {
+                                    "startLine": 15,
+                                    "endLine": 15
+                                },
+                                "type": null,
+                                "byRef": false,
+                                "variadic": false,
+                                "var": {
+                                    "nodeType": "Expr_Variable",
+                                    "attributes": {
+                                        "startLine": 15,
+                                        "endLine": 15
+                                    },
+                                    "name": "request"
+                                },
+                                "default": null,
+                                "flags": 0,
+                                "attrGroups": []
+                            }
+                        ],
+                        "returnType": null,
+                        "stmts": [
+                            {
+                                "nodeType": "Stmt_Return",
+                                "attributes": {
+                                    "startLine": 17,
+                                    "endLine": 24
+                                },
+                                "expr": {
+                                    "nodeType": "Expr_Array",
+                                    "attributes": {
+                                        "startLine": 17,
+                                        "endLine": 24,
+                                        "kind": 2
+                                    },
+                                    "items": [
+                                        {
+                                            "nodeType": "Expr_ArrayItem",
+                                            "attributes": {
+                                                "startLine": 18,
+                                                "endLine": 18
+                                            },
+                                            "key": {
+                                                "nodeType": "Scalar_String",
+                                                "attributes": {
+                                                    "startLine": 18,
+                                                    "endLine": 18,
+                                                    "kind": 1
+                                                },
+                                                "value": "id"
+                                            },
+                                            "value": {
+                                                "nodeType": "Expr_PropertyFetch",
+                                                "attributes": {
+                                                    "startLine": 18,
+                                                    "endLine": 18
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 18,
+                                                        "endLine": 18
+                                                    },
+                                                    "name": "this"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 18,
+                                                        "endLine": 18
+                                                    },
+                                                    "name": "id"
+                                                }
+                                            },
+                                            "byRef": false,
+                                            "unpack": false
+                                        },
+                                        {
+                                            "nodeType": "Expr_ArrayItem",
+                                            "attributes": {
+                                                "startLine": 19,
+                                                "endLine": 19
+                                            },
+                                            "key": {
+                                                "nodeType": "Scalar_String",
+                                                "attributes": {
+                                                    "startLine": 19,
+                                                    "endLine": 19,
+                                                    "kind": 1
+                                                },
+                                                "value": "title"
+                                            },
+                                            "value": {
+                                                "nodeType": "Expr_PropertyFetch",
+                                                "attributes": {
+                                                    "startLine": 19,
+                                                    "endLine": 19
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 19,
+                                                        "endLine": 19
+                                                    },
+                                                    "name": "this"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 19,
+                                                        "endLine": 19
+                                                    },
+                                                    "name": "title"
+                                                }
+                                            },
+                                            "byRef": false,
+                                            "unpack": false
+                                        },
+                                        {
+                                            "nodeType": "Expr_ArrayItem",
+                                            "attributes": {
+                                                "startLine": 20,
+                                                "endLine": 20
+                                            },
+                                            "key": {
+                                                "nodeType": "Scalar_String",
+                                                "attributes": {
+                                                    "startLine": 20,
+                                                    "endLine": 20,
+                                                    "kind": 1
+                                                },
+                                                "value": "email"
+                                            },
+                                            "value": {
+                                                "nodeType": "Expr_PropertyFetch",
+                                                "attributes": {
+                                                    "startLine": 20,
+                                                    "endLine": 20
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 20,
+                                                        "endLine": 20
+                                                    },
+                                                    "name": "this"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 20,
+                                                        "endLine": 20
+                                                    },
+                                                    "name": "email"
+                                                }
+                                            },
+                                            "byRef": false,
+                                            "unpack": false
+                                        },
+                                        {
+                                            "nodeType": "Expr_ArrayItem",
+                                            "attributes": {
+                                                "startLine": 21,
+                                                "endLine": 21
+                                            },
+                                            "key": {
+                                                "nodeType": "Scalar_String",
+                                                "attributes": {
+                                                    "startLine": 21,
+                                                    "endLine": 21,
+                                                    "kind": 1
+                                                },
+                                                "value": "responsible"
+                                            },
+                                            "value": {
+                                                "nodeType": "Expr_PropertyFetch",
+                                                "attributes": {
+                                                    "startLine": 21,
+                                                    "endLine": 21
+                                                },
+                                                "var": {
+                                                    "nodeType": "Expr_Variable",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "endLine": 21
+                                                    },
+                                                    "name": "this"
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 21,
+                                                        "endLine": 21
+                                                    },
+                                                    "name": "responsible"
+                                                }
+                                            },
+                                            "byRef": false,
+                                            "unpack": false
+                                        },
+                                        {
+                                            "nodeType": "Expr_ArrayItem",
+                                            "attributes": {
+                                                "startLine": 22,
+                                                "endLine": 22
+                                            },
+                                            "key": {
+                                                "nodeType": "Scalar_String",
+                                                "attributes": {
+                                                    "startLine": 22,
+                                                    "endLine": 22,
+                                                    "kind": 1
+                                                },
+                                                "value": "serviceItems"
+                                            },
+                                            "value": {
+                                                "nodeType": "Expr_StaticCall",
+                                                "attributes": {
+                                                    "startLine": 22,
+                                                    "endLine": 22
+                                                },
+                                                "class": {
+                                                    "nodeType": "Name",
+                                                    "attributes": {
+                                                        "startLine": 22,
+                                                        "endLine": 22
+                                                    },
+                                                    "parts": [
+                                                        "ServiceItemCollection"
+                                                    ]
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 22,
+                                                        "endLine": 22
+                                                    },
+                                                    "name": "make"
+                                                },
+                                                "args": [
+                                                    {
+                                                        "nodeType": "Arg",
+                                                        "attributes": {
+                                                            "startLine": 22,
+                                                            "endLine": 22
+                                                        },
+                                                        "name": null,
+                                                        "value": {
+                                                            "nodeType": "Expr_MethodCall",
+                                                            "attributes": {
+                                                                "startLine": 22,
+                                                                "endLine": 22
+                                                            },
+                                                            "var": {
+                                                                "nodeType": "Expr_Variable",
+                                                                "attributes": {
+                                                                    "startLine": 22,
+                                                                    "endLine": 22
+                                                                },
+                                                                "name": "this"
+                                                            },
+                                                            "name": {
+                                                                "nodeType": "Identifier",
+                                                                "attributes": {
+                                                                    "startLine": 22,
+                                                                    "endLine": 22
+                                                                },
+                                                                "name": "whenLoaded"
+                                                            },
+                                                            "args": [
+                                                                {
+                                                                    "nodeType": "Arg",
+                                                                    "attributes": {
+                                                                        "startLine": 22,
+                                                                        "endLine": 22
+                                                                    },
+                                                                    "name": null,
+                                                                    "value": {
+                                                                        "nodeType": "Scalar_String",
+                                                                        "attributes": {
+                                                                            "startLine": 22,
+                                                                            "endLine": 22,
+                                                                            "kind": 1
+                                                                        },
+                                                                        "value": "serviceItems"
+                                                                    },
+                                                                    "byRef": false,
+                                                                    "unpack": false
+                                                                }
+                                                            ]
+                                                        },
+                                                        "byRef": false,
+                                                        "unpack": false
+                                                    }
+                                                ]
+                                            },
+                                            "byRef": false,
+                                            "unpack": false
+                                        },
+                                        {
+                                            "nodeType": "Expr_ArrayItem",
+                                            "attributes": {
+                                                "startLine": 23,
+                                                "endLine": 23
+                                            },
+                                            "key": {
+                                                "nodeType": "Scalar_String",
+                                                "attributes": {
+                                                    "startLine": 23,
+                                                    "endLine": 23,
+                                                    "kind": 1
+                                                },
+                                                "value": "responsibles"
+                                            },
+                                            "value": {
+                                                "nodeType": "Expr_StaticCall",
+                                                "attributes": {
+                                                    "startLine": 23,
+                                                    "endLine": 23
+                                                },
+                                                "class": {
+                                                    "nodeType": "Name",
+                                                    "attributes": {
+                                                        "startLine": 23,
+                                                        "endLine": 23
+                                                    },
+                                                    "parts": [
+                                                        "ResponsibleCollection"
+                                                    ]
+                                                },
+                                                "name": {
+                                                    "nodeType": "Identifier",
+                                                    "attributes": {
+                                                        "startLine": 23,
+                                                        "endLine": 23
+                                                    },
+                                                    "name": "make"
+                                                },
+                                                "args": [
+                                                    {
+                                                        "nodeType": "Arg",
+                                                        "attributes": {
+                                                            "startLine": 23,
+                                                            "endLine": 23
+                                                        },
+                                                        "name": null,
+                                                        "value": {
+                                                            "nodeType": "Expr_MethodCall",
+                                                            "attributes": {
+                                                                "startLine": 23,
+                                                                "endLine": 23
+                                                            },
+                                                            "var": {
+                                                                "nodeType": "Expr_Variable",
+                                                                "attributes": {
+                                                                    "startLine": 23,
+                                                                    "endLine": 23
+                                                                },
+                                                                "name": "this"
+                                                            },
+                                                            "name": {
+                                                                "nodeType": "Identifier",
+                                                                "attributes": {
+                                                                    "startLine": 23,
+                                                                    "endLine": 23
+                                                                },
+                                                                "name": "whenLoaded"
+                                                            },
+                                                            "args": [
+                                                                {
+                                                                    "nodeType": "Arg",
+                                                                    "attributes": {
+                                                                        "startLine": 23,
+                                                                        "endLine": 23
+                                                                    },
+                                                                    "name": null,
+                                                                    "value": {
+                                                                        "nodeType": "Scalar_String",
+                                                                        "attributes": {
+                                                                            "startLine": 23,
+                                                                            "endLine": 23,
+                                                                            "kind": 1
+                                                                        },
+                                                                        "value": "responsibles"
+                                                                    },
+                                                                    "byRef": false,
+                                                                    "unpack": false
+                                                                }
+                                                            ]
+                                                        },
+                                                        "byRef": false,
+                                                        "unpack": false
+                                                    }
+                                                ]
+                                            },
+                                            "byRef": false,
+                                            "unpack": false
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "attrGroups": []
+                    }
+                ],
+                "attrGroups": [],
+                "namespacedName": null,
+                "flags": 0,
+                "extends": {
+                    "nodeType": "Name",
+                    "attributes": {
+                        "startLine": 7,
+                        "endLine": 7
+                    },
+                    "parts": [
+                        "JsonResource"
+                    ]
+                },
+                "implements": []
+            }
+        ]
+    }
+]
