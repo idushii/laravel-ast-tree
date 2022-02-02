@@ -1,15 +1,53 @@
 created:
-    - app/Http/Controllers/PostController.php
-    - database/factories/PostFactory.php
-    - database/migrations/2022_02_02_071605_create_posts_table.php
-    - app/Models/Post.php
-    - tests/Feature/Http/Controllers/PostControllerTest.php
-    - app/Events/NewPost.php
-    - app/Http/Requests/PostStoreRequest.php
-    - app/Jobs/SyncMedia.php
-    - app/Mail/ReviewPost.php
-    - resources/views/post/index.blade.php
+    - app/Http/Controllers/ObjectItemController.php
+    - app/Http/Controllers/ServiceItemController.php
+    - app/Http/Controllers/WorkmanController.php
+    - app/Http/Controllers/ResponsibleController.php
+    - app/Http/Controllers/AdminController.php
+    - database/factories/ObjectItemFactory.php
+    - database/factories/ServiceItemFactory.php
+    - database/factories/WorkmanFactory.php
+    - database/factories/ResponsibleFactory.php
+    - database/factories/AdminFactory.php
+    - database/migrations/2022_02_02_072631_create_object_items_table.php
+    - database/migrations/2022_02_02_072632_create_service_items_table.php
+    - database/migrations/2022_02_02_072633_create_workmen_table.php
+    - database/migrations/2022_02_02_072634_create_responsibles_table.php
+    - database/migrations/2022_02_02_072635_create_admins_table.php
+    - database/migrations/2022_02_02_072636_create_object_item_responsible_table.php
+    - database/migrations/2022_02_02_072637_create_responsible_service_item_table.php
+    - app/Models/ObjectItem.php
+    - app/Models/ServiceItem.php
+    - app/Models/Workman.php
+    - app/Models/Responsible.php
+    - app/Models/Admin.php
+    - database/seeders/ObjectItemSeeder.php
+    - database/seeders/ServiceItemSeeder.php
+    - database/seeders/WorkmanSeeder.php
+    - database/seeders/ResponsibleSeeder.php
+    - database/seeders/AdminSeeder.php
+    - tests/Feature/Http/Controllers/ObjectItemControllerTest.php
+    - tests/Feature/Http/Controllers/ServiceItemControllerTest.php
+    - tests/Feature/Http/Controllers/WorkmanControllerTest.php
+    - tests/Feature/Http/Controllers/ResponsibleControllerTest.php
+    - tests/Feature/Http/Controllers/AdminControllerTest.php
+    - app/Http/Requests/ObjectItemUpdateRequest.php
+    - app/Http/Requests/ServiceItemUpdateRequest.php
+    - app/Http/Requests/WorkmanUpdateRequest.php
+    - app/Http/Requests/AdminUpdateRequest.php
+    - app/Http/Resources/ObjectItemCollection.php
+    - app/Http/Resources/ObjectItemResource.php
+    - app/Http/Resources/ServiceItemCollection.php
+    - app/Http/Resources/ServiceItemResource.php
+    - app/Http/Resources/WorkmanResource.php
+    - app/Http/Resources/AdminCollection.php
+    - app/Http/Resources/AdminResource.php
 updated:
-    - routes/web.php
+    - routes/api.php
 models:
     Post: { title: 'string:400', content: longtext, published_at: 'nullable timestamp', author_id: 'id:user' }
+    ObjectItem: { title: 'string:400 index', email: 'string:100 index', responsible: 'string:400', softdeletes: softDeletes, relationships: { hasMany: ServiceItem, belongsToMany: Responsible } }
+    ServiceItem: { title: 'string:400', template: 'enum:Companies,CompleteSet,Moving,LoadingUnloading', size: integer, active: boolean, object_item_id: 'id index', relationships: { belongsToMany: Responsible } }
+    Workman: { employed_id: 'int unique', fio: 'string:100 index', phone: 'string:100 index', comment: 'nullable string:100', year_birth: integer, passport: 'string:100', inn: 'string:100', bank_card: 'string:100', softdeletes: softDeletes }
+    Responsible: { uid: string, fio: 'string index', email: string, phone: 'string index', comment: 'nullable string', softdeletes: softDeletes, relationships: { belongsToMany: 'ObjectItem, ServiceItem' } }
+    Admin: { uid: string, fio: string, email: string }

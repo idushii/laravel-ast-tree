@@ -1,21 +1,54 @@
 models:
-  Post:
+  ObjectItem:
+    title: string:400 index
+    email: string:100 index
+    responsible: string:400
+    softDeletes: true
+    relationships:
+      hasMany: ServiceItem
+      belongsToMany: Responsible
+  ServiceItem:
     title: string:400
-    content: longtext
-    published_at: nullable timestamp
-    author_id: id:user
+    template: enum:Companies,CompleteSet,Moving,LoadingUnloading
+    size: integer
+    active: boolean
+    object_item_id: id index
+    relationships:
+      belongsToMany: Responsible
+  Workman:
+    employed_id: int unique
+    fio: string:100 index
+    phone: string:100 index
+    comment: nullable string:100
+    year_birth: integer
+    passport: string:100
+    inn: string:100
+    bank_card: string:100
+    softDeletes: true
+  Responsible:
+    uid: string
+    fio: string index
+    email: string
+    phone: string index
+    comment: nullable string
+    softDeletes: true
+    relationships:
+      belongsToMany: ObjectItem, ServiceItem
+  Admin:
+    uid: string
+    fio: string
+    email: string
+
+seeders: ObjectItem, ServiceItem, Workman, Responsible, Admin
 
 controllers:
-  Post:
-    index:
-      query: all
-      render: post.index with:posts
-
-    store:
-      validate: title, content, author_id
-      save: post
-      send: ReviewPost to:post.author.email with:post
-      dispatch: SyncMedia with:post
-      fire: NewPost with:post
-      flash: post.title
-      redirect: post.index
+  ObjectItem:
+    resource: api.show, api.update, api.index
+  ServiceItem:
+    resource: api.show, api.update, api.destroy, api.index
+  Workman:
+    resource: api.update
+  Responsible:
+    resource: api.destroy
+  Admin:
+    resource: api.show, api.update, api.index
