@@ -2,24 +2,31 @@
 
 require 'vendor/autoload.php';
 
-$code = <<<'CODE'
-<?php
+use Roave\BetterReflection\BetterReflection;
 
-function test($foo)
-{
-    var_dump($foo);
+$classInfo = (new BetterReflection())
+    ->reflector()
+    ->reflectClass(App\Http\Controllers\ServiceItemController::class);
+
+$ast = $classInfo->getMethod('show')->getAst();
+
+$res = $ast->getParams();
+
+foreach ($res as $key => $value) {
+    $variableType = join('\\', $value->type->jsonSerialize()['parts']);
+    $variableName = $value->var->jsonSerialize()['name'] . "\n";
+
+
+    if ($variableType != 'Illuminate\Http\Request') {
+        $classInfo2 = (new BetterReflection())
+            ->reflector()
+            ->reflectClass($variableType);
+
+        $res = ($classInfo2->getDocComment());
+        file_put_contents('res.json', json_encode($res));
+    }
+
 }
-CODE;
 
-//$code2 = file_get_contents('./')
+//file_put_contents('res.json', json_encode($res));
 
-$parser = (new \PhpParser\ParserFactory)->create(\PhpParser\ParserFactory::PREFER_PHP7);
-try {
-    $ast = $parser->parse($code);
-} catch (Error $error) {
-    echo "Parse error: {$error->getMessage()}\n";
-    return;
-}
-
-$dumper = new \PhpParser\NodeDumper;
-echo $dumper->dump($ast) . "\n";

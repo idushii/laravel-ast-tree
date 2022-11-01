@@ -11,7 +11,9 @@
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "nikic/php-parser": "^4.13"
+        "nikic/php-parser": "^4.13",
+        "roave/better-reflection": "^5.0",
+        "ext-json": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

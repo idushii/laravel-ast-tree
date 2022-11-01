@@ -5,6 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property int id
+ * @property string title
+ * @property string template
+ * @property int size
+ * @property bool active
+ * @property int object_item_id
+ * @property Responsible responsibles
+ * @property ObjectItem objectItem
+ */
 class ServiceItem extends Model
 {
     use HasFactory;
